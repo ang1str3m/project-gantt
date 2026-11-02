@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      spacing="22.0"
+      styleClass="dialog-root settings-page">
+
+    <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="settings-hero settings-hero-strong">
+        <StackPane prefWidth="52.0" prefHeight="52.0" styleClass="settings-hero-icon">
+            <FontIcon iconLiteral="mdi2i-information-outline" iconSize="24" iconColor="white"/>
+        </StackPane>
+        <VBox spacing="6.0">
+            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                <Label text="О приложении" styleClass="settings-hero-title"/>
+                <Label text="Brand" styleClass="settings-inline-badge"/>
+            </HBox>
+            <Label text="Gantrem — настольный планировщик проектов с диаграммой Ганта, зависимостями, критическим путём, финансовыми ограничениями и печатной отчётностью."
+                   styleClass="settings-hero-text"
+                   wrapText="true"/>
+        </VBox>
+    </HBox>
+
+    <VBox spacing="16.0" styleClass="settings-card settings-card-elevated settings-card-glass">
+        <HBox alignment="CENTER_LEFT" spacing="8.0">
+            <FontIcon iconLiteral="mdi2a-application-outline" iconSize="18"/>
+            <Label text="О продукте" styleClass="settings-card-title"/>
+        </HBox>
+        <Label wrapText="true"
+               styleClass="settings-help"
+               text="Приложение помогает вести задачи и подзадачи, визуализировать сроки, управлять зависимостями, учитывать даты АВ и КС и готовить отчёты для печати, PDF и CSV."/>
+        <Separator/>
+        <Label wrapText="true"
+               styleClass="settings-help"
+               text="Автор разработки: Angistrem. Название продукта: Gantrem."/>
+    </VBox>
+
+    <HBox spacing="14.0" styleClass="settings-note-strip">
+        <VBox spacing="6.0" HBox.hgrow="ALWAYS" styleClass="settings-mini-card">
+            <Label text="Позиционирование" styleClass="settings-mini-title"/>
+            <Label text="Gantrem — визуальный планировщик проектов, ориентированный на сроки, зависимости, критический путь и презентационную отчётность."
+                   styleClass="settings-mini-text"
+                   wrapText="true"/>
+        </VBox>
+        <VBox spacing="6.0" HBox.hgrow="ALWAYS" styleClass="settings-mini-card">
+            <Label text="Автор" styleClass="settings-mini-title"/>
+            <Label text="Продукт разработан Angistrem и готов для демонстрации руководителю, тестирования и портфолио."
+                   styleClass="settings-mini-text"
+                   wrapText="true"/>
+        </VBox>
+    </HBox>
+</VBox>

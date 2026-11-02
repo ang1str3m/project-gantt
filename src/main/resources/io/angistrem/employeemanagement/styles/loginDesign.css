@@ -1,0 +1,113 @@
+.close {
+    -fx-background-color: transparent;
+    -fx-cursor: hand;
+}
+
+.close:hover {
+    -fx-background-color: #ff3547;
+}
+
+.login-light .leftAnchorPane {
+    -fx-background-color: linear-gradient(to bottom right, #dff3ff, #bfe3ff 58%, #ebf5ff);
+}
+
+.login-dark .leftAnchorPane {
+    -fx-background-color: linear-gradient(to bottom right, #0f766e, #1d4ed8 65%, #0b2447);
+}
+
+.login-light .rightAnchorPane {
+    -fx-background-color: #ffffff;
+}
+
+.login-dark .rightAnchorPane {
+    -fx-background-color: #0f172a;
+}
+
+.login-light .rightAnchorPane .label,
+.login-light .rightAnchorPane .login-textfield {
+    -fx-text-fill: #0f172a;
+}
+
+.login-dark .rightAnchorPane .label,
+.login-dark .rightAnchorPane .login-textfield {
+    -fx-text-fill: #e5e7eb;
+}
+
+.textfield {
+    -fx-background-radius: 12px;
+    -fx-border-radius: 12px;
+    -fx-padding: 10 38 10 12;
+    -fx-font-size: 13px;
+}
+
+.login-light .textfield {
+    -fx-background-color: #f8fafc;
+    -fx-border-color: #cbd5e1;
+}
+
+.login-dark .textfield {
+    -fx-background-color: #111827;
+    -fx-border-color: #334155;
+}
+
+.login-light .rightAnchorPane .login-textfield {
+    -fx-prompt-text-fill: #64748b;
+    -fx-highlight-fill: #93c5fd;
+    -fx-highlight-text-fill: #0b1e3a;
+}
+
+.login-dark .rightAnchorPane .login-textfield {
+    -fx-prompt-text-fill: #94a3b8;
+    -fx-highlight-fill: #60a5fa;
+    -fx-highlight-text-fill: #0b1220;
+}
+
+.textfield:focused {
+    -fx-border-width: 1.2px;
+    -fx-border-color: #2f80ed;
+}
+
+.login-light .textfield:focused {
+    -fx-background-color: #ffffff;
+}
+
+.login-dark .textfield:focused {
+    -fx-background-color: #172033;
+}
+
+.login {
+    -fx-background-color: linear-gradient(to bottom, #4099f5, #2d66c8);
+    -fx-text-fill: white;
+    -fx-background-radius: 12px;
+    -fx-padding: 10 14 10 14;
+}
+
+.login:hover {
+    -fx-background-color: linear-gradient(to bottom, #2e88e8, #275ab2);
+}
+
+.eyeStyle {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-padding: 0 10 0 10;
+}
+
+.login-light .eyeStyle {
+    -fx-text-fill: #334155;
+}
+
+.login-dark .eyeStyle {
+    -fx-text-fill: #cbd5e1;
+}
+
+.eyeStyle:hover {
+    -fx-background-radius: 8;
+}
+
+.login-light .eyeStyle:hover {
+    -fx-background-color: rgba(148, 163, 184, 0.16);
+}
+
+.login-dark .eyeStyle:hover {
+    -fx-background-color: rgba(148, 163, 184, 0.1);
+}

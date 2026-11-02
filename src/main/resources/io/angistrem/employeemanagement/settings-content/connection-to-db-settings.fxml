@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      spacing="22.0"
+      styleClass="dialog-root settings-page">
+
+    <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="settings-hero settings-hero-strong">
+        <StackPane prefWidth="52.0" prefHeight="52.0" styleClass="settings-hero-icon">
+            <FontIcon iconLiteral="mdi2d-database-outline" iconSize="24" iconColor="white"/>
+        </StackPane>
+        <VBox spacing="6.0">
+            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                <Label text="Хранилище данных" styleClass="settings-hero-title"/>
+                <Label text="System" styleClass="settings-inline-badge"/>
+            </HBox>
+            <Label text="Технический раздел о том, где Gantrem хранит пользователей, настройки, служебные данные и локальную базу проекта."
+                   styleClass="settings-hero-text"
+                   wrapText="true"/>
+        </VBox>
+    </HBox>
+
+    <VBox spacing="16.0" styleClass="settings-card settings-card-elevated settings-card-glass">
+        <HBox alignment="CENTER_LEFT" spacing="8.0">
+            <FontIcon iconLiteral="mdi2h-harddisk" iconSize="18"/>
+            <Label text="Текущее устройство хранения" styleClass="settings-card-title"/>
+        </HBox>
+        <Label wrapText="true"
+               styleClass="settings-help"
+               text="Сейчас Gantrem использует локальную SQLite-базу в служебной папке приложения. Такой режим удобен для настольной работы, демонстраций и автономного использования без отдельного сервера."/>
+        <Separator/>
+        <Label wrapText="true"
+               styleClass="settings-help"
+               text="Позже сюда можно вынести резервное копирование, перенос базы, диагностику соединения и расширенные параметры хранения."/>
+    </VBox>
+
+    <HBox spacing="14.0" styleClass="settings-note-strip">
+        <VBox spacing="6.0" HBox.hgrow="ALWAYS" styleClass="settings-mini-card">
+            <Label text="Локальная база" styleClass="settings-mini-title"/>
+            <Label text="Текущий формат хранения хорошо подходит для одиночной работы, демонстраций и портфолио-версии приложения."
+                   styleClass="settings-mini-text"
+                   wrapText="true"/>
+        </VBox>
+    </HBox>
+</VBox>

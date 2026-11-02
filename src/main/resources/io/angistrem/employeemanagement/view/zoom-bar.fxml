@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<HBox fx:id="zoomToolBar"
+      alignment="CENTER_LEFT"
+      maxWidth="Infinity"
+      spacing="6.0"
+      styleClass="tool-bar"
+      style="-fx-padding: 6 8 6 8;"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="io.angistrem.employeemanagement.controller.ZoomController">
+
+    <fx:define>
+        <ToggleGroup fx:id="zoomToggleGroup"/>
+    </fx:define>
+
+    <children>
+        <Label text="Масштаб:"/>
+        <Button onAction="#handleZoomOut" text="-">
+            <graphic>
+                <FontIcon iconLiteral="mdi2m-magnify-minus-outline" iconSize="16"/>
+            </graphic>
+        </Button>
+        <Label fx:id="zoomLevelLabel" alignment="CENTER" minWidth="55.0" text="100%"/>
+        <Button onAction="#handleZoomIn" text="+">
+            <graphic>
+                <FontIcon iconLiteral="mdi2m-magnify-plus-outline" iconSize="16"/>
+            </graphic>
+        </Button>
+        <Separator orientation="VERTICAL"/>
+
+        <ToggleButton fx:id="zoomFitButton" onAction="#handleZoomFit" text="По ширине" toggleGroup="$zoomToggleGroup"/>
+        <ToggleButton fx:id="zoomWeekButton" onAction="#handleZoomWeek" text="Неделя" toggleGroup="$zoomToggleGroup"/>
+        <ToggleButton fx:id="zoomMonthButton" onAction="#handleZoomMonth" text="Месяц" toggleGroup="$zoomToggleGroup"/>
+        <ToggleButton fx:id="zoomQuarterButton" onAction="#handleZoomQuarter" text="Квартал" toggleGroup="$zoomToggleGroup"/>
+        <ToggleButton fx:id="zoomYearButton" onAction="#handleZoomYear" text="Год" toggleGroup="$zoomToggleGroup"/>
+        <ToggleButton fx:id="zoomResetButton" onAction="#handleZoomReset" text="100%" toggleGroup="$zoomToggleGroup"/>
+        <Separator orientation="VERTICAL"/>
+
+        <ToggleButton fx:id="dependencyModeButton" onAction="#handleToggleDependencyMode" text="Связь">
+            <graphic>
+                <FontIcon iconLiteral="mdi2l-link-variant" iconSize="16"/>
+            </graphic>
+        </ToggleButton>
+
+        <ToggleButton fx:id="criticalPathButton" onAction="#handleShowCriticalPath" text="Критический путь"/>
+        <Button fx:id="projectAnalysisButton" onAction="#handleShowProjectAnalysis" text="Анализ проекта"/>
+
+        <Separator orientation="VERTICAL"/>
+        <Region HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+    </children>
+</HBox>

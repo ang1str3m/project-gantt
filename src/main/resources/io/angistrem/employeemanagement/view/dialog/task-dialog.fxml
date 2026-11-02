@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="io.angistrem.employeemanagement.controller.TaskController"
+            styleClass="dialog-root">
+
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="0" left="20"/>
+            </padding>
+            <children>
+                <Label text="Карточка задачи" styleClass="dialog-title">
+                    <font>
+                        <Font size="18.0"/>
+                    </font>
+                </Label>
+                <Label text="Создание и редактирование верхнеуровневой задачи проекта." styleClass="dialog-subtitle"/>
+                <Separator/>
+            </children>
+        </VBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED">
+            <content>
+                <VBox spacing="16">
+                    <padding>
+                        <Insets top="16" right="20" bottom="16" left="20"/>
+                    </padding>
+                    <children>
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <children>
+                                <Label text="Тип задачи"/>
+                                <ComboBox fx:id="taskTypeBox" prefWidth="220.0"/>
+                            </children>
+                        </HBox>
+
+                        <GridPane hgap="12" vgap="12" styleClass="dialog-section">
+                            <columnConstraints>
+                                <ColumnConstraints minWidth="180" prefWidth="190"/>
+                                <ColumnConstraints hgrow="ALWAYS" minWidth="320"/>
+                            </columnConstraints>
+                            <rowConstraints>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                                <RowConstraints/>
+                            </rowConstraints>
+                            <children>
+                                <Label text="Название" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                <TextField fx:id="nameField" promptText="Например: Подготовка площадки" GridPane.rowIndex="0" GridPane.columnIndex="1" styleClass="dialog-field"/>
+
+                                <Label text="Исполнитель" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                <TextField fx:id="companyField" promptText="Компания или подрядчик" GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="dialog-field"/>
+
+                                <Label text="Дата начала" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                <DatePicker fx:id="startDatePicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                                <Label text="Дата окончания" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                                <DatePicker fx:id="endDatePicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                                <Label text="Статус" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                                <ComboBox fx:id="statusBox" GridPane.rowIndex="4" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+
+                                <Label text="Приоритет" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                                <ComboBox fx:id="priorityBox" GridPane.rowIndex="5" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+
+                                <Label text="Зависимости" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                                <VBox spacing="8" styleClass="dialog-section" GridPane.rowIndex="6" GridPane.columnIndex="1">
+                                    <children>
+                                        <HBox spacing="8" alignment="CENTER_LEFT">
+                                            <children>
+                                                <ComboBox fx:id="dependencyPredecessorBox" promptText="Предшественник" HBox.hgrow="ALWAYS"/>
+                                                <ComboBox fx:id="dependencyTypeBox" prefWidth="82.0"/>
+                                                <TextField fx:id="dependencyLagField" promptText="Лаг" prefWidth="76.0"/>
+                                                <Button text="+" onAction="#handleAddDependency" styleClass="primary-button icon-button"/>
+                                            </children>
+                                        </HBox>
+                                        <Label fx:id="dependencyLegendLabel" styleClass="dialog-help-text" wrapText="true"/>
+                                    </children>
+                                </VBox>
+
+                                <Label text="Текущие зависимости" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+                                <VBox spacing="8" styleClass="dialog-section" GridPane.rowIndex="7" GridPane.columnIndex="1">
+                                    <children>
+                                        <ListView fx:id="dependencyListView" prefHeight="108.0" VBox.vgrow="ALWAYS"/>
+                                        <HBox spacing="8" alignment="CENTER_LEFT">
+                                            <children>
+                                                <Button fx:id="toggleDependencyCriticalButton" text="Сделать критической" onAction="#handleToggleDependencyCritical" styleClass="secondary-button"/>
+                                                <Button text="Удалить выбранную" onAction="#handleRemoveDependency" styleClass="danger-button"/>
+                                            </children>
+                                        </HBox>
+                                        <Label fx:id="dependencyCriticalHintLabel" styleClass="dialog-help-text" wrapText="true"/>
+                                    </children>
+                                </VBox>
+
+                                <Label text="Текстовый формат" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+                                <HBox spacing="8" alignment="CENTER_LEFT" GridPane.rowIndex="8" GridPane.columnIndex="1">
+                                    <children>
+                                        <TextField fx:id="dependencyPositionsField" promptText="1.:FS, 2.:SS+1, 3.:FF-1!" HBox.hgrow="ALWAYS"/>
+                                        <Button text="Применить" onAction="#handleParseDependenciesFromText" styleClass="secondary-button"/>
+                                    </children>
+                                </HBox>
+
+                                <Label text="Критический риск задачи" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+                                <CheckBox fx:id="criticalDependencyBox" text="Подсветить задачу как рискованную" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+
+                                <Label text="Дата авансирования договора" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+                                <DatePicker fx:id="contractAdvanceDatePicker" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+                                <Label text="Дата оплаты КС" GridPane.rowIndex="11" GridPane.columnIndex="0"/>
+                                <DatePicker fx:id="ksPaymentDatePicker" GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+
+                                <Label text="Финансовые ограничения" GridPane.rowIndex="12" GridPane.columnIndex="0"/>
+                                <HBox spacing="12" GridPane.rowIndex="12" GridPane.columnIndex="1">
+                                    <children>
+                                        <CheckBox fx:id="requireAdvanceBox" text="Старт после аванса"/>
+                                        <CheckBox fx:id="requireKsBox" text="Старт после КС"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </GridPane>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" styleClass="dialog-actions" alignment="CENTER_RIGHT">
+            <padding>
+                <Insets top="8" right="20" bottom="20" left="20"/>
+            </padding>
+            <children>
+                <Button text="Отменить" onAction="#handleExit" cancelButton="true" styleClass="secondary-button"/>
+                <Button text="Сохранить" onAction="#handleOk" defaultButton="true" styleClass="primary-button"/>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Priority?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane fx:id="menuRoot"
+            prefHeight="820.0"
+            prefWidth="1320.0"
+            styleClass="menu-root"
+            stylesheets="@../styles/menuDesign.css"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="io.angistrem.employeemanagement.controller.MenuController">
+
+    <center>
+        <HBox alignment="CENTER" spacing="28.0" BorderPane.alignment="CENTER">
+            <padding>
+                <Insets top="34.0" right="34.0" bottom="34.0" left="34.0"/>
+            </padding>
+
+            <children>
+                <VBox spacing="22.0" styleClass="hero-panel" HBox.hgrow="ALWAYS">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" spacing="16.0">
+                            <children>
+                                <StackPane styleClass="brand-logo-frame">
+                                    <children>
+                                        <ImageView fitHeight="92.0" fitWidth="92.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../img/Logo_for_app.png"/>
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </StackPane>
+                                <VBox alignment="CENTER_LEFT" spacing="4.0">
+                                    <children>
+                                        <Label text="Gantrem" styleClass="brand-title"/>
+                                        <Label text="Планирование проектов, сроков, зависимостей и печатных отчётов"
+                                               styleClass="brand-subtitle"
+                                               wrapText="true"/>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <VBox spacing="10.0">
+                            <children>
+                                <Label text="Рабочий старт" styleClass="section-title"/>
+                                <Label text="Создавайте проект с нуля, открывайте текущие файлы, запускайте демо-проект и быстро возвращайтесь к последним рабочим сценариям."
+                                       styleClass="section-description"
+                                       wrapText="true"/>
+                            </children>
+                        </VBox>
+
+                        <HBox spacing="14.0">
+                            <children>
+                                <VBox spacing="14.0" HBox.hgrow="ALWAYS">
+                                    <children>
+                                        <Button fx:id="newProject" mnemonicParsing="false" onAction="#handleNewProject" styleClass="primary-action-button" text="Новый проект">
+                                            <graphic>
+                                                <FontIcon iconLiteral="mdi2f-folder-plus-outline" iconSize="22"/>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="loadProject" mnemonicParsing="false" onAction="#handleLoadProject" styleClass="secondary-action-button" text="Открыть проект">
+                                            <graphic>
+                                                <FontIcon iconLiteral="mdi2f-folder-open-outline" iconSize="22"/>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="demoProject" mnemonicParsing="false" onAction="#handleDemoProject" styleClass="secondary-action-button" text="Демо-проект">
+                                            <graphic>
+                                                <FontIcon iconLiteral="mdi2p-play-box-outline" iconSize="22"/>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="settingBtn" mnemonicParsing="false" onAction="#handleSettingBtn" styleClass="secondary-action-button" text="Настройки">
+                                            <graphic>
+                                                <FontIcon iconLiteral="mdi2c-cog-outline" iconSize="22"/>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="exit" mnemonicParsing="false" onAction="#handleExit" styleClass="danger-action-button" text="Выход">
+                                            <graphic>
+                                                <FontIcon iconLiteral="mdi2e-exit-to-app" iconSize="22"/>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </VBox>
+
+                                <VBox spacing="12.0" styleClass="insight-card">
+                                    <children>
+                                        <Label text="Что внутри" styleClass="insight-title"/>
+                                        <Label text="Диаграмма Ганта, зависимости задач и подзадач, критический путь, печать, PDF, CSV и гибкие настройки интерфейса."
+                                               styleClass="insight-text"
+                                               wrapText="true"/>
+                                        <Region prefHeight="8.0"/>
+                                        <Label text="Автор разработки" styleClass="insight-caption"/>
+                                        <Label text="Angistrem" styleClass="insight-value"/>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <VBox prefWidth="470.0" maxWidth="470.0" spacing="16.0" styleClass="recent-panel">
+                    <children>
+                        <HBox alignment="CENTER_LEFT">
+                            <children>
+                                <VBox spacing="4.0">
+                                    <children>
+                                        <Label text="Недавние проекты" styleClass="recent-title"/>
+                                        <Label text="Откройте последние файлы в один клик" styleClass="recent-subtitle"/>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="recent-scroll" VBox.vgrow="ALWAYS">
+                            <content>
+                                <VBox fx:id="recentProjectsBox" spacing="12.0" styleClass="recent-list">
+                                    <children>
+                                        <Label fx:id="noRecentProjectsLabel"
+                                               text="Пока пусто. Откройте или сохраните проект, и он появится здесь."
+                                               wrapText="true"
+                                               styleClass="recent-empty"/>
+                                    </children>
+                                </VBox>
+                            </content>
+                        </ScrollPane>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </center>
+</BorderPane>

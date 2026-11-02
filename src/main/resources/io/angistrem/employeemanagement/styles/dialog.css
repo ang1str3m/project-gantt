@@ -1,0 +1,336 @@
+.dialog-root {
+    -fx-background-color: linear-gradient(to bottom, #fcfdff, #f3f7fd);
+    -fx-padding: 22;
+    -fx-spacing: 16;
+}
+
+.dialog-title {
+    -fx-font-size: 21px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0f172a;
+}
+
+.dialog-subtitle {
+    -fx-font-size: 12px;
+    -fx-line-spacing: 2px;
+    -fx-text-fill: #64748b;
+}
+
+.dialog-caption {
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #64748b;
+    -fx-text-transform: uppercase;
+}
+
+.dialog-help-text {
+    -fx-font-size: 11px;
+    -fx-line-spacing: 2px;
+    -fx-text-fill: #64748b;
+}
+
+.dialog-root .separator .line {
+    -fx-border-color: #d7deeb;
+}
+
+.dialog-root .label {
+    -fx-text-fill: #1f2937;
+}
+
+.dialog-root .grid-pane,
+.dialog-root .list-view,
+.dialog-root .dialog-section,
+.dialog-root .table-view,
+.dialog-root .split-pane {
+    -fx-background-color: rgba(255, 255, 255, 0.96);
+    -fx-background-radius: 14;
+    -fx-border-color: rgba(148, 163, 184, 0.25);
+    -fx-border-radius: 14;
+}
+
+.dialog-root .grid-pane {
+    -fx-padding: 16;
+}
+
+.dialog-root .dialog-section {
+    -fx-padding: 14;
+}
+
+.dialog-root .table-view {
+    -fx-padding: 6;
+}
+
+.dialog-root .split-pane {
+    -fx-padding: 0;
+}
+
+.dialog-root .split-pane > .split-pane-divider {
+    -fx-padding: 0 1 0 1;
+    -fx-background-color: rgba(203, 213, 225, 0.85);
+}
+
+.dialog-root .list-view {
+    -fx-padding: 6;
+    -fx-min-height: 92;
+}
+
+.dialog-root .list-view .list-cell {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1f2937;
+    -fx-background-radius: 10;
+    -fx-padding: 8 10 8 10;
+}
+
+.dialog-root .list-view .list-cell:filled:selected,
+.dialog-root .list-view .list-cell:filled:hover {
+    -fx-background-color: #e8f0ff;
+}
+
+.dialog-root .table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #f8fbff, #edf3fb);
+    -fx-background-radius: 12 12 0 0;
+    -fx-border-color: rgba(148, 163, 184, 0.20);
+    -fx-border-width: 0 0 1 0;
+}
+
+.dialog-root .table-view .column-header,
+.dialog-root .table-view .filler {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(226, 232, 240, 0.90);
+    -fx-border-width: 0 1 0 0;
+}
+
+.dialog-root .table-view .column-header .label {
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #334155;
+}
+
+.dialog-root .table-row-cell {
+    -fx-background-color: #ffffff;
+    -fx-border-color: transparent transparent #edf2f7 transparent;
+}
+
+.dialog-root .table-row-cell:odd {
+    -fx-background-color: #f8fbff;
+}
+
+.dialog-root .table-row-cell:selected {
+    -fx-background-color: linear-gradient(to right, #dbeafe, #eff6ff);
+}
+
+.dialog-root .table-cell {
+    -fx-padding: 7 10 7 10;
+}
+
+.dialog-field,
+.dialog-root .text-field,
+.dialog-root .password-field,
+.dialog-root .combo-box,
+.dialog-root .choice-box,
+.dialog-root .date-picker,
+.dialog-root .list-view {
+    -fx-background-color: #f8fafc;
+    -fx-background-radius: 10;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 10;
+    -fx-padding: 8 10 8 10;
+}
+
+.dialog-root .combo-box-base,
+.dialog-root .choice-box,
+.dialog-root .date-picker .text-field {
+    -fx-background-color: transparent;
+}
+
+.dialog-root .choice-box,
+.dialog-root .choice-box .label {
+    -fx-text-fill: #1f2937;
+}
+
+.dialog-pane .choice-box,
+.dialog-pane .choice-box .label {
+    -fx-text-fill: #1f2937;
+}
+
+.dialog-root .choice-box > .open-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent transparent #d7deeb;
+}
+
+.dialog-pane .choice-box > .open-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent transparent #d7deeb;
+}
+
+.dialog-root .choice-box > .open-button > .arrow {
+    -fx-background-color: #64748b;
+}
+
+.dialog-pane .choice-box > .open-button > .arrow {
+    -fx-background-color: #64748b;
+}
+
+.dialog-root .choice-box .context-menu {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d7deeb;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.dialog-pane .choice-box .context-menu {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #d7deeb;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.dialog-root .choice-box .menu-item .label {
+    -fx-text-fill: #1f2937;
+}
+
+.dialog-pane .choice-box .menu-item .label {
+    -fx-text-fill: #1f2937;
+}
+
+.dialog-root .choice-box .menu-item:focused,
+.dialog-root .choice-box .menu-item:hover {
+    -fx-background-color: #e8f0ff;
+}
+
+.dialog-pane .choice-box .menu-item:focused,
+.dialog-pane .choice-box .menu-item:hover {
+    -fx-background-color: #e8f0ff;
+}
+
+.dialog-field:focused,
+.dialog-root .text-field:focused,
+.dialog-root .password-field:focused,
+.dialog-root .combo-box:focused,
+.dialog-root .choice-box:focused,
+.dialog-pane .choice-box:focused,
+.dialog-root .date-picker:focused {
+    -fx-border-color: #3b82f6;
+    -fx-effect: dropshadow(gaussian, rgba(59, 130, 246, 0.18), 10, 0.25, 0, 2);
+}
+
+.dialog-root .invalid-field {
+    -fx-border-color: #ef4444;
+    -fx-border-width: 1.4;
+    -fx-effect: dropshadow(gaussian, rgba(239, 68, 68, 0.16), 10, 0.25, 0, 2);
+}
+
+.dialog-root .warning-field {
+    -fx-border-color: #f59e0b;
+    -fx-border-width: 1.4;
+    -fx-effect: dropshadow(gaussian, rgba(245, 158, 11, 0.14), 10, 0.25, 0, 2);
+}
+
+.dialog-root .check-box .box {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #94a3b8;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
+}
+
+.dialog-root .check-box:selected .mark {
+    -fx-background-color: #2563eb;
+}
+
+.dialog-actions {
+    -fx-alignment: CENTER_RIGHT;
+    -fx-padding: 4 0 0 0;
+}
+
+.section-title,
+.dialog-section-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #0f172a;
+}
+
+.primary-button {
+    -fx-background-color: linear-gradient(to bottom, #3b82f6, #2563eb);
+    -fx-text-fill: white;
+    -fx-font-weight: 800;
+    -fx-background-radius: 12;
+    -fx-padding: 10 18 10 18;
+    -fx-border-color: transparent;
+}
+
+.primary-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #4b8ffc, #2563eb);
+}
+
+.secondary-button {
+    -fx-background-color: #eef2f7;
+    -fx-text-fill: #1f2937;
+    -fx-background-radius: 12;
+    -fx-padding: 10 18 10 18;
+    -fx-border-color: #d5dce8;
+    -fx-border-radius: 12;
+}
+
+.secondary-button:hover {
+    -fx-background-color: #e3eaf4;
+}
+
+.icon-button {
+    -fx-min-width: 38;
+    -fx-max-width: 38;
+    -fx-min-height: 38;
+    -fx-font-size: 16px;
+    -fx-padding: 0;
+}
+
+.danger-button {
+    -fx-background-color: linear-gradient(to bottom, #fff1f2, #ffe4e6);
+    -fx-text-fill: #be123c;
+    -fx-border-color: #fecdd3;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-padding: 9 16 9 16;
+}
+
+.danger-button:hover {
+    -fx-background-color: linear-gradient(to bottom, #ffe4e6, #fecdd3);
+}
+
+.dialog-section-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+    -fx-text-fill: #0f172a;
+}
+
+.dialog-metric-card {
+    -fx-padding: 14 16 14 16;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(148, 163, 184, 0.18);
+}
+
+.dialog-metric-card-blue {
+    -fx-background-color: linear-gradient(to bottom, rgba(59,130,246,0.10), rgba(219,234,254,0.62));
+}
+
+.dialog-metric-card-green {
+    -fx-background-color: linear-gradient(to bottom, rgba(16,185,129,0.10), rgba(220,252,231,0.66));
+}
+
+.dialog-metric-card-amber {
+    -fx-background-color: linear-gradient(to bottom, rgba(245,158,11,0.12), rgba(254,243,199,0.70));
+}
+
+.dialog-metric-value {
+    -fx-font-size: 20px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0f172a;
+}
+
+.dialog-side-card {
+    -fx-background-color: linear-gradient(to bottom, rgba(255,255,255,0.96), rgba(244,247,252,0.98));
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(148, 163, 184, 0.24);
+    -fx-padding: 16;
+}

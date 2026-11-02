@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      spacing="22.0"
+      styleClass="dialog-root settings-page">
+
+    <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="settings-hero settings-hero-strong">
+        <StackPane prefWidth="52.0" prefHeight="52.0" styleClass="settings-hero-icon">
+            <FontIcon iconLiteral="mdi2f-folder-download-outline" iconSize="24" iconColor="white"/>
+        </StackPane>
+        <VBox spacing="6.0">
+            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                <Label text="Сохранение и экспорт" styleClass="settings-hero-title"/>
+                <Label text="Workflow" styleClass="settings-inline-badge"/>
+            </HBox>
+            <Label text="Укажите рабочие каталоги по умолчанию для проектов, PDF и CSV, чтобы ежедневная работа и экспорт проходили без лишних действий."
+                   styleClass="settings-hero-text"
+                   wrapText="true"/>
+        </VBox>
+    </HBox>
+
+    <VBox spacing="16.0" styleClass="settings-card settings-card-elevated settings-card-glass">
+        <HBox alignment="CENTER_LEFT" spacing="8.0">
+            <FontIcon iconLiteral="mdi2f-folder-cog-outline" iconSize="18"/>
+            <Label text="Пути по умолчанию" styleClass="settings-card-title"/>
+        </HBox>
+
+        <GridPane hgap="18.0" vgap="14.0" styleClass="settings-grid">
+            <columnConstraints>
+                <ColumnConstraints minWidth="230.0" prefWidth="230.0"/>
+                <ColumnConstraints hgrow="ALWAYS"/>
+                <ColumnConstraints minWidth="132.0" prefWidth="132.0"/>
+            </columnConstraints>
+
+            <Label text="Папка проектов:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="defaultProjectDirField" editable="false" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+            <Button fx:id="browseProjectDirBtn" text="Выбрать" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+
+            <Label text="Папка PDF:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="defaultPdfDirField" editable="false" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <Button fx:id="browsePdfDirBtn" text="Выбрать" GridPane.rowIndex="1" GridPane.columnIndex="2"/>
+
+            <Label text="Папка CSV:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="defaultCsvDirField" editable="false" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <Button fx:id="browseCsvDirBtn" text="Выбрать" GridPane.rowIndex="2" GridPane.columnIndex="2"/>
+        </GridPane>
+
+        <CheckBox fx:id="keepDialogsInLastDirCheckBox"
+                  text="Запоминать последнюю использованную папку в файловых диалогах"/>
+
+        <Label text="Если опция включена, приложение будет открывать диалоги в последнем рабочем каталоге. Если выключена — использовать заранее заданные пути по умолчанию."
+               styleClass="settings-help"
+               wrapText="true"/>
+    </VBox>
+
+    <HBox spacing="14.0" styleClass="settings-note-strip">
+        <VBox spacing="6.0" HBox.hgrow="ALWAYS" styleClass="settings-mini-card">
+            <Label text="Проекты" styleClass="settings-mini-title"/>
+            <Label text="Задайте постоянную рабочую папку, чтобы новые проекты и ручные сохранения открывались сразу в нужном месте."
+                   styleClass="settings-mini-text"
+                   wrapText="true"/>
+        </VBox>
+        <VBox spacing="6.0" HBox.hgrow="ALWAYS" styleClass="settings-mini-card">
+            <Label text="Экспорт" styleClass="settings-mini-title"/>
+            <Label text="PDF и CSV удобнее складывать в отдельные каталоги — так отчётность и обмен файлами остаются аккуратными."
+                   styleClass="settings-mini-text"
+                   wrapText="true"/>
+        </VBox>
+    </HBox>
+
+    <Separator/>
+
+    <HBox styleClass="settings-actions">
+        <Button fx:id="resetSavePathsBtn" text="Сбросить пути" styleClass="secondary-button"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="cancelSaveBtn" text="Отмена" styleClass="secondary-button"/>
+        <Button fx:id="applySaveBtn" text="Применить" defaultButton="true"/>
+    </HBox>
+</VBox>

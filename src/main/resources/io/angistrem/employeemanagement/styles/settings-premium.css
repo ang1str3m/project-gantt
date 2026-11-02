@@ -1,0 +1,466 @@
+.settings-shell {
+    -fx-padding: 18;
+    -fx-background-color: linear-gradient(to bottom right, #ecf4ff, #f8fbff 34%, #eef8f9 100%);
+}
+
+.settings-stage {
+    -fx-padding: 10;
+    -fx-background-color: linear-gradient(to bottom, rgba(255,255,255,0.68), rgba(255,255,255,0.34));
+    -fx-background-radius: 30;
+    -fx-border-color: rgba(255,255,255,0.72);
+    -fx-border-radius: 30;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.08), 30, 0.18, 0, 10);
+}
+
+.settings-content-root {
+    -fx-background-color:
+        linear-gradient(to bottom, rgba(255,255,255,0.98), rgba(246,250,255,0.98)),
+        radial-gradient(center 12% 8%, radius 40%, rgba(96,165,250,0.10), transparent),
+        radial-gradient(center 88% 6%, radius 36%, rgba(34,211,238,0.10), transparent);
+    -fx-background-radius: 28;
+    -fx-border-color: rgba(203,213,225,0.72);
+    -fx-border-radius: 28;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.08), 30, 0.18, 0, 10);
+}
+
+.settings-sidebar {
+    -fx-padding: 18;
+    -fx-background-color: linear-gradient(to bottom, #0f172a, #0b1220 35%, #111827 100%);
+    -fx-background-radius: 30;
+    -fx-border-color: rgba(96,165,250,0.18);
+    -fx-border-radius: 30;
+    -fx-effect: dropshadow(gaussian, rgba(2,6,23,0.3), 24, 0.24, 0, 10);
+}
+
+.settings-brand-card,
+.settings-side-note,
+.settings-nav-cluster {
+    -fx-background-color: linear-gradient(to bottom, rgba(255,255,255,0.10), rgba(255,255,255,0.03));
+    -fx-background-radius: 22;
+    -fx-border-color: rgba(148,163,184,0.14);
+    -fx-border-radius: 22;
+    -fx-padding: 16;
+}
+
+.settings-nav-cluster {
+    -fx-spacing: 10;
+}
+
+.settings-rail-caption {
+    -fx-font-size: 11px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #7dd3fc;
+}
+
+.settings-sidebar-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #f8fafc;
+}
+
+.settings-sidebar-subtitle {
+    -fx-font-size: 12px;
+    -fx-line-spacing: 2px;
+    -fx-text-fill: #9fb1c9;
+    -fx-wrap-text: true;
+}
+
+.settings-brand-glyph {
+    -fx-background-color: linear-gradient(to bottom right, #60a5fa, #22d3ee);
+    -fx-background-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(34,211,238,0.35), 18, 0.28, 0, 6);
+}
+
+.settings-brand-glyph-text {
+    -fx-font-size: 18px;
+    -fx-font-weight: 900;
+    -fx-text-fill: white;
+}
+
+.settings-nav-button {
+    -fx-max-width: Infinity;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 15 16 15 16;
+    -fx-graphic-text-gap: 12;
+    -fx-font-size: 13px;
+    -fx-font-weight: 800;
+    -fx-background-color: rgba(255,255,255,0.04);
+    -fx-text-fill: #dbe4f0;
+    -fx-border-color: rgba(71,85,105,0.32);
+    -fx-border-width: 1;
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+}
+
+.settings-nav-button .ikonli-font-icon {
+    -fx-icon-color: #b9d8ff;
+}
+
+.settings-nav-button:hover {
+    -fx-background-color: linear-gradient(to right, rgba(96,165,250,0.16), rgba(59,130,246,0.08));
+    -fx-border-color: rgba(96,165,250,0.4);
+}
+
+.settings-nav-button:selected {
+    -fx-background-color: linear-gradient(to right, rgba(59,130,246,0.88), rgba(37,99,235,0.78));
+    -fx-text-fill: white;
+    -fx-border-color: rgba(191,219,254,0.42);
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.28), 18, 0.2, 0, 4);
+}
+
+.settings-nav-button:selected .ikonli-font-icon {
+    -fx-icon-color: white;
+}
+
+.settings-back-button {
+    -fx-background-color: linear-gradient(to bottom, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+    -fx-border-color: rgba(148,163,184,0.18);
+    -fx-text-fill: #f8fafc;
+    -fx-font-weight: 800;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-padding: 10 16 10 16;
+}
+
+.settings-back-button:hover {
+    -fx-background-color: rgba(255,255,255,0.14);
+}
+
+.settings-side-note-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #f8fafc;
+}
+
+.settings-side-note-text {
+    -fx-font-size: 12px;
+    -fx-text-fill: #99a9be;
+    -fx-wrap-text: true;
+}
+
+.settings-page {
+    -fx-padding: 28;
+    -fx-spacing: 22;
+}
+
+.settings-topbar {
+    -fx-padding: 4 4 0 6;
+}
+
+.settings-topbar-title {
+    -fx-font-size: 22px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0f172a;
+}
+
+.settings-topbar-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+}
+
+.settings-topbar-pill {
+    -fx-background-color: linear-gradient(to right, #eff6ff, #dbeafe);
+    -fx-text-fill: #1d4ed8;
+    -fx-font-size: 11px;
+    -fx-font-weight: 900;
+    -fx-padding: 5 10 5 10;
+    -fx-background-radius: 999;
+}
+
+.settings-topbar-pill-muted {
+    -fx-background-color: linear-gradient(to right, #f8fafc, #eef2ff);
+    -fx-text-fill: #475569;
+}
+
+.settings-hero {
+    -fx-padding: 22;
+    -fx-background-color:
+        linear-gradient(to right, rgba(29,78,216,0.08), rgba(34,211,238,0.09)),
+        linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(255,255,255,0.38));
+    -fx-background-radius: 24;
+    -fx-border-color: rgba(96,165,250,0.22);
+    -fx-border-radius: 24;
+}
+
+.settings-hero-strong {
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.12), 20, 0.2, 0, 6);
+}
+
+.settings-hero-icon {
+    -fx-background-color: linear-gradient(to bottom right, #2563eb, #06b6d4);
+    -fx-background-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(37,99,235,0.28), 18, 0.2, 0, 6);
+}
+
+.settings-hero-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0f172a;
+}
+
+.settings-hero-text {
+    -fx-font-size: 13px;
+    -fx-line-spacing: 2px;
+    -fx-text-fill: #475569;
+    -fx-wrap-text: true;
+}
+
+.settings-card {
+    -fx-padding: 20;
+    -fx-background-color:
+        linear-gradient(to bottom, rgba(255,255,255,0.94), rgba(249,251,255,0.98)),
+        linear-gradient(to right, rgba(96,165,250,0.03), rgba(34,211,238,0.02));
+    -fx-background-radius: 22;
+    -fx-border-color: rgba(203,213,225,0.72);
+    -fx-border-radius: 22;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.06), 18, 0.16, 0, 6);
+}
+
+.settings-card-glass {
+    -fx-background-color: linear-gradient(to bottom, rgba(255,255,255,0.98), rgba(243,248,255,0.96));
+    -fx-border-color: rgba(191,219,254,0.55);
+}
+
+.settings-card-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0f172a;
+}
+
+.settings-help {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+    -fx-wrap-text: true;
+}
+
+.settings-inline-badge {
+    -fx-background-color: linear-gradient(to right, #e0f2fe, #dbeafe);
+    -fx-text-fill: #1d4ed8;
+    -fx-font-size: 11px;
+    -fx-font-weight: 900;
+    -fx-background-radius: 999;
+    -fx-padding: 3 9 3 9;
+}
+
+.settings-inline-caption {
+    -fx-font-size: 12px;
+    -fx-font-weight: 800;
+    -fx-text-fill: #0f172a;
+}
+
+.settings-grid .label {
+    -fx-text-fill: #334155;
+    -fx-font-size: 12px;
+    -fx-font-weight: 700;
+}
+
+.settings-page .text-field,
+.settings-page .combo-box-base,
+.settings-page .color-picker,
+.settings-page .button {
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+}
+
+.settings-page .text-field,
+.settings-page .combo-box-base {
+    -fx-padding: 9 13 9 13;
+    -fx-background-color: linear-gradient(to bottom, rgba(255,255,255,1), rgba(247,250,252,1));
+    -fx-border-color: #d6dfec;
+    -fx-effect: innershadow(gaussian, rgba(255,255,255,0.9), 10, 0.2, 0, 1);
+}
+
+.settings-page .combo-box-base > .arrow-button,
+.settings-page .color-picker > .arrow-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0 14 14 0;
+    -fx-border-color: transparent transparent transparent rgba(148,163,184,0.18);
+}
+
+.settings-page .combo-box-base > .arrow-button .arrow,
+.settings-page .color-picker > .arrow-button .arrow {
+    -fx-background-color: #2563eb;
+}
+
+.settings-page .color-picker {
+    -fx-background-color: linear-gradient(to bottom, rgba(252,253,255,1), rgba(247,250,252,1));
+    -fx-border-color: #d6dfec;
+}
+
+.settings-page .text-field:focused,
+.settings-page .combo-box-base:focused,
+.settings-page .color-picker:focused {
+    -fx-border-color: #60a5fa;
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.16), 12, 0.2, 0, 0);
+}
+
+.settings-page .check-box {
+    -fx-text-fill: #334155;
+}
+
+.settings-preview-pane {
+    -fx-background-color:
+        linear-gradient(to bottom, rgba(255,255,255,1), rgba(241,245,249,1)),
+        linear-gradient(to right, rgba(96,165,250,0.04), rgba(34,211,238,0.03));
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(148,163,184,0.35);
+    -fx-border-radius: 20;
+    -fx-effect: innershadow(gaussian, rgba(255,255,255,0.9), 14, 0.2, 0, 1);
+}
+
+.settings-actions {
+    -fx-spacing: 10;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 6 0 0 0;
+}
+
+.settings-actions .button {
+    -fx-padding: 10 16 10 16;
+    -fx-font-weight: 800;
+}
+
+.settings-actions .button:default {
+    -fx-background-color: linear-gradient(to right, #2563eb, #0ea5e9);
+    -fx-text-fill: white;
+    -fx-border-color: rgba(255,255,255,0.22);
+}
+
+.settings-actions .button.secondary-button {
+    -fx-background-color: rgba(255,255,255,0.96);
+    -fx-text-fill: #0f172a;
+}
+
+.settings-actions .button.secondary-button:hover {
+    -fx-background-color: #eef4ff;
+}
+
+.settings-showcase {
+    -fx-padding: 6 0 0 0;
+}
+
+.settings-note-strip {
+    -fx-padding: 2 0 0 0;
+}
+
+.settings-mini-card {
+    -fx-padding: 14;
+    -fx-background-color: linear-gradient(to bottom, rgba(255,255,255,0.9), rgba(244,248,253,0.96));
+    -fx-background-radius: 18;
+    -fx-border-color: rgba(191,219,254,0.4);
+    -fx-border-radius: 18;
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.05), 12, 0.18, 0, 4);
+}
+
+.settings-mini-title {
+    -fx-font-size: 12px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0f172a;
+}
+
+.settings-mini-text {
+    -fx-font-size: 11px;
+    -fx-line-spacing: 2px;
+    -fx-text-fill: #64748b;
+}
+
+.settings-swatch-card {
+    -fx-padding: 14;
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-border-color: rgba(148,163,184,0.28);
+    -fx-background-color: linear-gradient(to bottom, rgba(255,255,255,0.92), rgba(248,250,252,0.98));
+    -fx-effect: dropshadow(gaussian, rgba(15,23,42,0.05), 14, 0.18, 0, 4);
+}
+
+.settings-swatch-light {
+    -fx-border-color: rgba(96,165,250,0.26);
+}
+
+.settings-swatch-dark {
+    -fx-background-color: linear-gradient(to bottom, #172033, #111827);
+    -fx-border-color: rgba(96,165,250,0.24);
+}
+
+.settings-swatch-type {
+    -fx-background-color: linear-gradient(to bottom, rgba(240,249,255,1), rgba(238,242,255,1));
+    -fx-border-color: rgba(99,102,241,0.22);
+}
+
+.settings-swatch-title {
+    -fx-font-size: 12px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #0f172a;
+}
+
+.settings-swatch-dark .settings-swatch-title {
+    -fx-text-fill: #f8fafc;
+}
+
+.settings-swatch-text {
+    -fx-font-size: 11px;
+    -fx-line-spacing: 2px;
+    -fx-text-fill: #64748b;
+}
+
+.settings-swatch-dark .settings-swatch-text {
+    -fx-text-fill: #cbd5e1;
+}
+
+.settings-font-sample {
+    -fx-font-size: 32px;
+    -fx-font-weight: 900;
+    -fx-text-fill: #1d4ed8;
+}
+
+.settings-shell .scroll-pane,
+.settings-shell .scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.settings-shell .separator .line {
+    -fx-border-color: rgba(203,213,225,0.75);
+}
+
+.settings-surface-preview {
+    -fx-background-radius: 999;
+    -fx-border-radius: 999;
+}
+
+.settings-surface-preview-primary {
+    -fx-background-color: linear-gradient(to right, #ffffff, #eff6ff);
+    -fx-border-color: rgba(148,163,184,0.35);
+}
+
+.settings-surface-preview-soft {
+    -fx-background-color: linear-gradient(to right, #f8fafc, #ecfeff);
+    -fx-border-color: rgba(148,163,184,0.2);
+}
+
+.settings-surface-preview-accent {
+    -fx-background-color: linear-gradient(to right, #60a5fa, #22d3ee);
+}
+
+.settings-surface-preview-dark {
+    -fx-background-color: linear-gradient(to right, #0f172a, #111827);
+}
+
+.settings-surface-preview-dark-soft {
+    -fx-background-color: linear-gradient(to right, #172033, #1f2937);
+}
+
+.settings-surface-preview-dark-accent {
+    -fx-background-color: linear-gradient(to right, #2563eb, #06b6d4);
+}
+
+.root .settings-shell {
+    -fx-snap-to-pixel: true;
+}
+
+.text-presentation .settings-sidebar-title {
+    -fx-font-size: 26px;
+}
+
+.text-presentation .settings-card-title,
+.text-presentation .settings-hero-title {
+    -fx-font-size: 18px;
+}

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.CustomMenuItem?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.HBox?>
+
+<MenuBar maxWidth="Infinity"
+         xmlns="http://javafx.com/javafx/21"
+         xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="io.angistrem.employeemanagement.controller.menu.MainMenuBar">
+
+    <menus>
+        <Menu text="Файл">
+            <items>
+                <MenuItem fx:id="newProjectMenuItem" text="Новый проект" onAction="#handleNewProject"/>
+                <MenuItem fx:id="loadProjectMenuItem" text="Загрузить проект..." onAction="#handleLoadProject"/>
+                <MenuItem fx:id="saveProjectMenuItem" text="Сохранить" onAction="#handleSaveProject"/>
+                <MenuItem fx:id="saveAsProjectMenuItem" text="Сохранить как..." onAction="#handleSaveAsProject"/>
+                <MenuItem fx:id="closeProjectMenuItem" text="Закрыть проект" onAction="#handleCloseProject"/>
+                <SeparatorMenuItem/>
+                <MenuItem text="Руководство пользователя" onAction="#handleUserGuide"/>
+                <SeparatorMenuItem/>
+                <MenuItem fx:id="exitMenuItem" text="Выход" onAction="#handleExit"/>
+            </items>
+        </Menu>
+
+        <Menu text="Редактирование">
+            <items>
+                <MenuItem text="Данные проекта..." onAction="#handleEditProjectDetails"/>
+                <MenuItem text="Бюджет..." onAction="#handleProjectBudget"/>
+                <MenuItem text="Платёжный календарь..." onAction="#handlePaymentCalendar"/>
+                <MenuItem text="Ресурсы..." onAction="#handleManageResources"/>
+                <MenuItem text="Загрузка ресурсов..." onAction="#handleResourceLoad"/>
+                <MenuItem text="Сводка по этапам..." onAction="#handleStageOverview"/>
+                <SeparatorMenuItem/>
+                <Menu text="Вид">
+                    <items>
+                        <CustomMenuItem hideOnClick="false">
+                            <content>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0" onMouseClicked="#handleTogglePositionColumnClick" pickOnBounds="true">
+                                    <padding>
+                                        <Insets top="4.0" right="18.0" bottom="4.0" left="8.0"/>
+                                    </padding>
+                                    <Label fx:id="viewPositionColumnCheck" minWidth="16.0" prefWidth="16.0" text="✓"/>
+                                    <Label text="№ п/п"/>
+                                </HBox>
+                            </content>
+                        </CustomMenuItem>
+                        <CustomMenuItem hideOnClick="false">
+                            <content>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0" onMouseClicked="#handleToggleNameColumnClick" pickOnBounds="true">
+                                    <padding>
+                                        <Insets top="4.0" right="18.0" bottom="4.0" left="8.0"/>
+                                    </padding>
+                                    <Label fx:id="viewNameColumnCheck" minWidth="16.0" prefWidth="16.0" text="✓"/>
+                                    <Label text="Наименование работ"/>
+                                </HBox>
+                            </content>
+                        </CustomMenuItem>
+                        <CustomMenuItem hideOnClick="false">
+                            <content>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0" onMouseClicked="#handleToggleCompanyColumnClick" pickOnBounds="true">
+                                    <padding>
+                                        <Insets top="4.0" right="18.0" bottom="4.0" left="8.0"/>
+                                    </padding>
+                                    <Label fx:id="viewCompanyColumnCheck" minWidth="16.0" prefWidth="16.0" text="✓"/>
+                                    <Label text="Исполнитель"/>
+                                </HBox>
+                            </content>
+                        </CustomMenuItem>
+                        <CustomMenuItem hideOnClick="false">
+                            <content>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0" onMouseClicked="#handleToggleStartColumnClick" pickOnBounds="true">
+                                    <padding>
+                                        <Insets top="4.0" right="18.0" bottom="4.0" left="8.0"/>
+                                    </padding>
+                                    <Label fx:id="viewStartColumnCheck" minWidth="16.0" prefWidth="16.0" text="✓"/>
+                                    <Label text="Начало"/>
+                                </HBox>
+                            </content>
+                        </CustomMenuItem>
+                        <CustomMenuItem hideOnClick="false">
+                            <content>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0" onMouseClicked="#handleToggleEndColumnClick" pickOnBounds="true">
+                                    <padding>
+                                        <Insets top="4.0" right="18.0" bottom="4.0" left="8.0"/>
+                                    </padding>
+                                    <Label fx:id="viewEndColumnCheck" minWidth="16.0" prefWidth="16.0" text="✓"/>
+                                    <Label text="Окончание"/>
+                                </HBox>
+                            </content>
+                        </CustomMenuItem>
+                        <CustomMenuItem hideOnClick="false">
+                            <content>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0" onMouseClicked="#handleToggleUnitColumnClick" pickOnBounds="true">
+                                    <padding>
+                                        <Insets top="4.0" right="18.0" bottom="4.0" left="8.0"/>
+                                    </padding>
+                                    <Label fx:id="viewUnitColumnCheck" minWidth="16.0" prefWidth="16.0" text="✓"/>
+                                    <Label text="Ед. изм."/>
+                                </HBox>
+                            </content>
+                        </CustomMenuItem>
+                        <CustomMenuItem hideOnClick="false">
+                            <content>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0" onMouseClicked="#handleToggleVolProjectColumnClick" pickOnBounds="true">
+                                    <padding>
+                                        <Insets top="4.0" right="18.0" bottom="4.0" left="8.0"/>
+                                    </padding>
+                                    <Label fx:id="viewVolProjectColumnCheck" minWidth="16.0" prefWidth="16.0" text="✓"/>
+                                    <Label text="Проектный объём"/>
+                                </HBox>
+                            </content>
+                        </CustomMenuItem>
+                        <CustomMenuItem hideOnClick="false">
+                            <content>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0" onMouseClicked="#handleToggleVolActualColumnClick" pickOnBounds="true">
+                                    <padding>
+                                        <Insets top="4.0" right="18.0" bottom="4.0" left="8.0"/>
+                                    </padding>
+                                    <Label fx:id="viewVolActualColumnCheck" minWidth="16.0" prefWidth="16.0" text="✓"/>
+                                    <Label text="Фактический объём"/>
+                                </HBox>
+                            </content>
+                        </CustomMenuItem>
+                        <CustomMenuItem hideOnClick="false">
+                            <content>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0" onMouseClicked="#handleTogglePercentColumnClick" pickOnBounds="true">
+                                    <padding>
+                                        <Insets top="4.0" right="18.0" bottom="4.0" left="8.0"/>
+                                    </padding>
+                                    <Label fx:id="viewPercentColumnCheck" minWidth="16.0" prefWidth="16.0" text="✓"/>
+                                    <Label text="Процент"/>
+                                </HBox>
+                            </content>
+                        </CustomMenuItem>
+                        <CustomMenuItem hideOnClick="false">
+                            <content>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0" onMouseClicked="#handleToggleStatusColumnClick" pickOnBounds="true">
+                                    <padding>
+                                        <Insets top="4.0" right="18.0" bottom="4.0" left="8.0"/>
+                                    </padding>
+                                    <Label fx:id="viewStatusColumnCheck" minWidth="16.0" prefWidth="16.0" text="✓"/>
+                                    <Label text="Статус"/>
+                                </HBox>
+                            </content>
+                        </CustomMenuItem>
+                        <CustomMenuItem hideOnClick="false">
+                            <content>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0" onMouseClicked="#handleTogglePriorityColumnClick" pickOnBounds="true">
+                                    <padding>
+                                        <Insets top="4.0" right="18.0" bottom="4.0" left="8.0"/>
+                                    </padding>
+                                    <Label fx:id="viewPriorityColumnCheck" minWidth="16.0" prefWidth="16.0" text="✓"/>
+                                    <Label text="Приоритет"/>
+                                </HBox>
+                            </content>
+                        </CustomMenuItem>
+                        <CustomMenuItem hideOnClick="false">
+                            <content>
+                                <HBox alignment="CENTER_LEFT" spacing="8.0" onMouseClicked="#handleToggleDependenciesClick" pickOnBounds="true">
+                                    <padding>
+                                        <Insets top="4.0" right="18.0" bottom="4.0" left="8.0"/>
+                                    </padding>
+                                    <Label fx:id="viewDependenciesCheck" minWidth="16.0" prefWidth="16.0" text="✓"/>
+                                    <Label text="Показывать зависимости"/>
+                                </HBox>
+                            </content>
+                        </CustomMenuItem>
+                    </items>
+                </Menu>
+            </items>
+        </Menu>
+
+        <Menu text="Печать и экспорт">
+            <items>
+                <MenuItem text="Вывод на печать" onAction="#handlePrintFullProject"/>
+                <MenuItem text="Экспорт в PDF" onAction="#handleExportPdf"/>
+                <MenuItem text="Экспорт в CSV" onAction="#handleExportCsv"/>
+            </items>
+        </Menu>
+    </menus>
+</MenuBar>

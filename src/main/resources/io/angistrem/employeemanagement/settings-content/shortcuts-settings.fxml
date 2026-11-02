@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      spacing="22.0"
+      styleClass="dialog-root settings-page">
+
+    <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="settings-hero settings-hero-strong">
+        <StackPane prefWidth="52.0" prefHeight="52.0" styleClass="settings-hero-icon">
+            <FontIcon iconLiteral="mdi2k-keyboard-outline" iconSize="24" iconColor="white"/>
+        </StackPane>
+        <VBox spacing="6.0">
+            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                <Label text="Горячие клавиши" styleClass="settings-hero-title"/>
+                <Label text="Productivity" styleClass="settings-inline-badge"/>
+            </HBox>
+            <Label text="Нажмите в поле и введите нужное сочетание прямо с клавиатуры. Так вы сможете подстроить управление под свой стиль работы."
+                   styleClass="settings-hero-text"
+                   wrapText="true"/>
+        </VBox>
+    </HBox>
+
+    <VBox spacing="16.0" styleClass="settings-card settings-card-elevated settings-card-glass">
+        <HBox alignment="CENTER_LEFT" spacing="8.0">
+            <FontIcon iconLiteral="mdi2c-console-line" iconSize="18"/>
+            <Label text="Комбинации действий" styleClass="settings-card-title"/>
+            <Label text="Ctrl+S • F5 • Ctrl+Shift+C" styleClass="settings-inline-badge"/>
+        </HBox>
+
+        <GridPane hgap="18.0" vgap="12.0" styleClass="settings-grid">
+            <columnConstraints>
+                <ColumnConstraints minWidth="250.0" prefWidth="250.0"/>
+                <ColumnConstraints hgrow="ALWAYS"/>
+            </columnConstraints>
+
+            <Label text="Новый проект:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="hotkeyNewProjectField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Открыть проект:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="hotkeyOpenProjectField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Сохранить:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextField fx:id="hotkeySaveProjectField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+            <Label text="Сохранить как:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <TextField fx:id="hotkeySaveAsProjectField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+            <Label text="Печать проекта:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <TextField fx:id="hotkeyPrintProjectField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+            <Label text="Экспорт PDF:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+            <TextField fx:id="hotkeyExportPdfField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+            <Label text="Экспорт CSV:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+            <TextField fx:id="hotkeyExportCsvField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+
+            <Label text="Фокус на поиск:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+            <TextField fx:id="hotkeyFocusSearchField" GridPane.rowIndex="7" GridPane.columnIndex="1"/>
+
+            <Label text="Пересчитать зависимости:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+            <TextField fx:id="hotkeyRecalculateField" GridPane.rowIndex="8" GridPane.columnIndex="1"/>
+
+            <Label text="Увеличить диаграмму:" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+            <TextField fx:id="hotkeyZoomInField" GridPane.rowIndex="9" GridPane.columnIndex="1"/>
+
+            <Label text="Уменьшить диаграмму:" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+            <TextField fx:id="hotkeyZoomOutField" GridPane.rowIndex="10" GridPane.columnIndex="1"/>
+
+            <Label text="Сбросить масштаб:" GridPane.rowIndex="11" GridPane.columnIndex="0"/>
+            <TextField fx:id="hotkeyZoomResetField" GridPane.rowIndex="11" GridPane.columnIndex="1"/>
+
+            <Label text="Показать критический путь:" GridPane.rowIndex="12" GridPane.columnIndex="0"/>
+            <TextField fx:id="hotkeyShowCriticalPathField" GridPane.rowIndex="12" GridPane.columnIndex="1"/>
+
+            <Label text="Открыть руководство:" GridPane.rowIndex="13" GridPane.columnIndex="0"/>
+            <TextField fx:id="hotkeyShowHelpField" GridPane.rowIndex="13" GridPane.columnIndex="1"/>
+
+            <Label text="Вернуть удалённое:" GridPane.rowIndex="14" GridPane.columnIndex="0"/>
+            <TextField fx:id="hotkeyUndoDeleteField" GridPane.rowIndex="14" GridPane.columnIndex="1"/>
+        </GridPane>
+
+        <Label text="Если сочетание уже используется системой или пересекается с другим действием, лучше выбрать более уникальную комбинацию."
+               styleClass="settings-help"
+               wrapText="true"/>
+    </VBox>
+
+    <HBox spacing="14.0" styleClass="settings-note-strip">
+        <VBox spacing="6.0" HBox.hgrow="ALWAYS" styleClass="settings-mini-card">
+            <Label text="Быстрый доступ" styleClass="settings-mini-title"/>
+            <Label text="Для основных действий лучше выбирать комбинации, которые легко нажимать одной рукой и не путать между собой."
+                   styleClass="settings-mini-text"
+                   wrapText="true"/>
+        </VBox>
+        <VBox spacing="6.0" HBox.hgrow="ALWAYS" styleClass="settings-mini-card">
+            <Label text="Критический путь" styleClass="settings-mini-title"/>
+            <Label text="Отдельная клавиша для критического пути удобна при демонстрациях и работе с плотными графиками."
+                   styleClass="settings-mini-text"
+                   wrapText="true"/>
+        </VBox>
+    </HBox>
+
+    <Separator/>
+
+    <HBox styleClass="settings-actions">
+        <Button fx:id="resetHotkeysBtn" text="Сбросить по умолчанию" styleClass="secondary-button"/>
+        <Button fx:id="showHotkeysPreviewBtn" text="Показать список" styleClass="secondary-button"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="cancelHotkeysBtn" text="Отмена" styleClass="secondary-button"/>
+        <Button fx:id="applyHotkeysBtn" text="Применить" defaultButton="true"/>
+    </HBox>
+</VBox>

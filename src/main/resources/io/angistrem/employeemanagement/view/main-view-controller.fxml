@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="Infinity" maxWidth="Infinity" prefHeight="768.0" prefWidth="1024.0"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="io.angistrem.employeemanagement.controller.MainController">
+    <top>
+        <VBox fx:id="topBarContainer" maxWidth="Infinity" fillWidth="true">
+            <fx:include fx:id="mainMenuBar" source="menu/main-bar-menu.fxml"/>
+        </VBox>
+    </top>
+
+    <center>
+        <VBox fx:id="workspaceRoot" maxWidth="Infinity" maxHeight="Infinity" fillWidth="true">
+            <children>
+                <HBox fx:id="zoomBarContainer" maxWidth="Infinity">
+                    <children>
+                        <fx:include fx:id="zoomBar" source="zoom-bar.fxml" HBox.hgrow="ALWAYS"/>
+                    </children>
+                </HBox>
+
+                <HBox fx:id="filterBar" spacing="8.0" style="-fx-padding: 6 8 6 8;" maxWidth="Infinity">
+                    <children>
+                        <Label text="&#1055;&#1086;&#1080;&#1089;&#1082;:"/>
+                        <TextField fx:id="searchField"
+                                   promptText="&#1053;&#1072;&#1079;&#1074;&#1072;&#1085;&#1080;&#1077;, &#1080;&#1089;&#1087;&#1086;&#1083;&#1085;&#1080;&#1090;&#1077;&#1083;&#1100;, &#1089;&#1090;&#1072;&#1090;&#1091;&#1089;, &#1087;&#1088;&#1080;&#1086;&#1088;&#1080;&#1090;&#1077;&#1090;..."
+                                   HBox.hgrow="ALWAYS"/>
+                        <Label text="&#1057;&#1090;&#1072;&#1090;&#1091;&#1089;:"/>
+                        <ComboBox fx:id="statusFilterBox" prefWidth="170.0"/>
+                        <CheckBox fx:id="autoScheduleCheckBox" selected="true" text="&#1040;&#1074;&#1090;&#1086;-&#1087;&#1077;&#1088;&#1077;&#1089;&#1095;&#1105;&#1090;"/>
+                        <Button onAction="#handleRecalculateSchedule" text="&#1055;&#1077;&#1088;&#1077;&#1089;&#1095;&#1080;&#1090;&#1072;&#1090;&#1100;"/>
+                    </children>
+                </HBox>
+
+                <HBox fx:id="dashboardBar" spacing="14.0" style="-fx-padding: 2 8 6 8;" maxWidth="Infinity">
+                    <children>
+                        <Label text="&#1047;&#1072;&#1076;&#1072;&#1095;:"/>
+                        <Label fx:id="totalTasksLabel" styleClass="dashboard-metric-value" text="0"/>
+                        <Label text="&#1055;&#1086;&#1076;&#1079;&#1072;&#1076;&#1072;&#1095;:"/>
+                        <Label fx:id="totalSubTasksLabel" styleClass="dashboard-metric-value" text="0"/>
+                        <Label text="&#1047;&#1072;&#1074;&#1077;&#1088;&#1096;&#1077;&#1085;&#1086;:"/>
+                        <Label fx:id="completedLabel" styleClass="dashboard-metric-value dashboard-metric-value-positive" text="0"/>
+                        <Label text="&#1055;&#1088;&#1086;&#1089;&#1088;&#1086;&#1095;&#1077;&#1085;&#1086;:"/>
+                        <Label fx:id="overdueLabel" styleClass="dashboard-metric-value dashboard-metric-value-danger" text="0"/>
+                        <Label text="&#1055;&#1088;&#1086;&#1075;&#1088;&#1077;&#1089;&#1089;:"/>
+                        <ProgressBar fx:id="overallProgressBar" prefWidth="180.0" progress="0.0"/>
+                        <Label fx:id="overallProgressLabel" styleClass="dashboard-metric-value" text="0%"/>
+                        <Label text="&#1056;&#1080;&#1089;&#1082;&#1080; &#1087;&#1088;&#1086;&#1077;&#1082;&#1090;&#1072;:"/>
+                        <Label fx:id="riskSummaryLabel" minWidth="28.0" styleClass="dashboard-risk-badge" text="0"/>
+                    </children>
+                </HBox>
+
+                <SplitPane fx:id="mainSplitPane" dividerPositions="0.385" maxWidth="Infinity" maxHeight="Infinity" VBox.vgrow="ALWAYS">
+                    <items>
+                        <AnchorPane onContextMenuRequested="#showTreeContextMenu">
+                            <children>
+                                <VBox AnchorPane.bottomAnchor="0.0"
+                                      AnchorPane.leftAnchor="0.0"
+                                      AnchorPane.rightAnchor="0.0"
+                                      AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <TreeTableView fx:id="treeTableView"
+                                                       editable="true"
+                                                       onContextMenuRequested="#showTreeContextMenu"
+                                                       stylesheets="@../styles/table.css"
+                                                       VBox.vgrow="ALWAYS">
+                                            <columns>
+                                                <TreeTableColumn fx:id="positionColumn" prefWidth="78.0" text="&#8470; &#1087;/&#1087;"/>
+                                                <TreeTableColumn fx:id="taskNameColumn" prefWidth="360.0" text="&#1053;&#1072;&#1080;&#1084;&#1077;&#1085;&#1086;&#1074;&#1072;&#1085;&#1080;&#1077; &#1088;&#1072;&#1073;&#1086;&#1090;"/>
+                                                <TreeTableColumn fx:id="companyColumn" prefWidth="190.0" text="&#1048;&#1089;&#1087;&#1086;&#1083;&#1085;&#1080;&#1090;&#1077;&#1083;&#1100;"/>
+                                                <TreeTableColumn fx:id="startColumn" prefWidth="90.0" text="&#1053;&#1072;&#1095;&#1072;&#1083;&#1086;"/>
+                                                <TreeTableColumn fx:id="endColumn" prefWidth="90.0" text="&#1054;&#1082;&#1086;&#1085;&#1095;&#1072;&#1085;&#1080;&#1077;"/>
+                                                <TreeTableColumn fx:id="unitOfMeasurementColumn" prefWidth="80.0" text="&#1045;&#1076;. &#1080;&#1079;&#1084;."/>
+                                                <TreeTableColumn fx:id="volProjectColumn" prefWidth="110.0" text="&#1055;&#1088;&#1086;&#1077;&#1082;&#1090;&#1085;&#1099;&#1081; &#1086;&#1073;&#1098;&#1105;&#1084;"/>
+                                                <TreeTableColumn fx:id="volActualColumn" prefWidth="110.0" text="&#1060;&#1072;&#1082;&#1090;&#1080;&#1095;&#1077;&#1089;&#1082;&#1080;&#1081; &#1086;&#1073;&#1098;&#1105;&#1084;"/>
+                                                <TreeTableColumn fx:id="percentColumn" prefWidth="90.0" text="&#1055;&#1088;&#1086;&#1094;&#1077;&#1085;&#1090;"/>
+                                                <TreeTableColumn fx:id="statusColumn" prefWidth="100.0" text="&#1057;&#1090;&#1072;&#1090;&#1091;&#1089;"/>
+                                                <TreeTableColumn fx:id="priorityColumn" prefWidth="90.0" text="&#1055;&#1088;&#1080;&#1086;&#1088;&#1080;&#1090;&#1077;&#1090;"/>
+                                            </columns>
+                                            <columnResizePolicy>
+                                                <TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                                            </columnResizePolicy>
+                                        </TreeTableView>
+                                        <Region fx:id="treeBottomSpacer"
+                                                prefHeight="0.0"
+                                                minHeight="0.0"
+                                                maxHeight="0.0"
+                                                styleClass="tree-bottom-spacer"/>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+
+                        <AnchorPane>
+                            <children>
+                                <VBox AnchorPane.bottomAnchor="0.0"
+                                      AnchorPane.leftAnchor="0.0"
+                                      AnchorPane.rightAnchor="0.0"
+                                      AnchorPane.topAnchor="0.0">
+                                    <children>
+                                        <ScrollPane fx:id="ganttHeaderScroll"
+                                                    fitToHeight="true"
+                                                    fitToWidth="false"
+                                                    pannable="true"
+                                                    prefHeight="64.0"
+                                                    vbarPolicy="NEVER"
+                                                    VBox.vgrow="NEVER"/>
+                                        <ScrollPane fx:id="ganttDiagram"
+                                                    fitToHeight="false"
+                                                    fitToWidth="false"
+                                                    pannable="true"
+                                                    VBox.vgrow="ALWAYS"/>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </items>
+                </SplitPane>
+            </children>
+        </VBox>
+    </center>
+</BorderPane>
+

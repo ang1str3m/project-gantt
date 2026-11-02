@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="io.angistrem.employeemanagement.controller.TaskResourcesController"
+            styleClass="dialog-root">
+
+    <top>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="20" right="20" bottom="0" left="20"/>
+            </padding>
+            <children>
+                <Label fx:id="taskTitleLabel" text="Ресурсы задачи" styleClass="dialog-title"/>
+                <Label text="Назначьте на задачу людей, технику и подрядчиков, чтобы позже анализировать загрузку и стоимость." styleClass="dialog-subtitle" wrapText="true"/>
+                <Separator/>
+            </children>
+        </VBox>
+    </top>
+
+    <center>
+        <SplitPane dividerPositions="0.55">
+            <items>
+                <VBox spacing="12">
+                    <padding>
+                        <Insets top="16" right="10" bottom="16" left="20"/>
+                    </padding>
+                    <children>
+                        <TableView fx:id="assignmentTable" VBox.vgrow="ALWAYS">
+                            <columns>
+                                <TableColumn fx:id="resourceColumn" text="Ресурс" prefWidth="220"/>
+                                <TableColumn fx:id="roleColumn" text="Роль" prefWidth="140"/>
+                                <TableColumn fx:id="allocationColumn" text="Загрузка" prefWidth="90"/>
+                                <TableColumn fx:id="plannedHoursColumn" text="План, ч" prefWidth="90"/>
+                                <TableColumn fx:id="actualHoursColumn" text="Факт, ч" prefWidth="90"/>
+                            </columns>
+                        </TableView>
+                        <HBox spacing="10">
+                            <children>
+                                <Button text="Добавить назначение" onAction="#handleAddAssignment" styleClass="primary-button"/>
+                                <Button text="Удалить" onAction="#handleDeleteAssignment" styleClass="danger-button"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+
+                <VBox spacing="12">
+                    <padding>
+                        <Insets top="16" right="20" bottom="16" left="10"/>
+                    </padding>
+                    <children>
+                        <Label text="Параметры назначения" styleClass="section-title"/>
+                        <GridPane hgap="12" vgap="12" styleClass="dialog-section">
+                            <children>
+                                <Label text="Ресурс" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                                <ComboBox fx:id="resourceBox" GridPane.rowIndex="0" GridPane.columnIndex="1" maxWidth="1.7976931348623157E308"/>
+
+                                <Label text="Роль в задаче" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                                <TextField fx:id="roleField" promptText="Например: монтаж, контроль, ПНР" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                                <Label text="Загрузка" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                                <TextField fx:id="allocationField" promptText="1" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                                <Label text="Плановые часы" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                                <TextField fx:id="plannedHoursField" promptText="0" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                                <Label text="Фактические часы" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                                <TextField fx:id="actualHoursField" promptText="0" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+                            </children>
+                        </GridPane>
+                        <VBox spacing="8" styleClass="dialog-side-card">
+                            <Label text="Как читать загрузку" styleClass="section-title"/>
+                            <Label text="1 = полный ресурс на задаче, 0.5 = половина ресурса. Это значение используется в анализе перегруза и стоимости." styleClass="dialog-help-text" wrapText="true"/>
+                        </VBox>
+                    </children>
+                </VBox>
+            </items>
+        </SplitPane>
+    </center>
+
+    <bottom>
+        <HBox spacing="10" alignment="CENTER_RIGHT" styleClass="dialog-actions">
+            <padding>
+                <Insets top="8" right="20" bottom="20" left="20"/>
+            </padding>
+            <children>
+                <Button text="Отмена" onAction="#handleCancel" cancelButton="true" styleClass="secondary-button"/>
+                <Button text="Сохранить" onAction="#handleSave" defaultButton="true" styleClass="primary-button"/>
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

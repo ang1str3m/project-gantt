@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      spacing="22.0"
+      styleClass="dialog-root settings-page">
+
+    <HBox alignment="CENTER_LEFT" spacing="12.0" styleClass="settings-hero settings-hero-strong">
+        <StackPane prefWidth="52.0" prefHeight="52.0" styleClass="settings-hero-icon">
+            <FontIcon iconLiteral="mdi2p-palette-swatch-outline" iconSize="24" iconColor="white"/>
+        </StackPane>
+        <VBox spacing="6.0" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                <Label text="Общие настройки" styleClass="settings-hero-title"/>
+                <Label text="Visual core" styleClass="settings-inline-badge"/>
+            </HBox>
+            <Label text="Настройте тему, типографику, автологин и визуальный язык диаграммы. Этот раздел формирует характер всего интерфейса."
+                   styleClass="settings-hero-text"
+                   wrapText="true"/>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="18.0">
+        <VBox spacing="16.0" HBox.hgrow="ALWAYS" styleClass="settings-card settings-card-elevated settings-card-glass">
+            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                <FontIcon iconLiteral="mdi2v-view-dashboard-outline" iconSize="18"/>
+                <Label text="Интерфейс" styleClass="settings-card-title"/>
+            </HBox>
+
+            <GridPane hgap="18.0" vgap="14.0" styleClass="settings-grid">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="220.0" prefWidth="220.0"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <Label text="Тема:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="themeBox" prefWidth="220.0" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Стиль текста:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="textStyleBox" prefWidth="220.0" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Семейство шрифта:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <ComboBox fx:id="fontFamilyBox" prefWidth="320.0" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Автовход:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <CheckBox fx:id="autoLoginCheckBox"
+                          text="Автоматически входить под последним пользователем"
+                          GridPane.rowIndex="3"
+                          GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <Label text="Режим Presentation делает текст и элементы интерфейса крупнее — удобно для демонстрации директору, презентаций и экранов с большим расстоянием просмотра."
+                   styleClass="settings-help"
+                   wrapText="true"/>
+
+            <HBox spacing="12.0" styleClass="settings-showcase">
+                <VBox spacing="8.0" HBox.hgrow="ALWAYS" styleClass="settings-swatch-card settings-swatch-light">
+                    <Label text="Светлая тема" styleClass="settings-swatch-title"/>
+                    <HBox spacing="6.0">
+                        <Region prefWidth="44.0" prefHeight="10.0" styleClass="settings-surface-preview settings-surface-preview-primary"/>
+                        <Region prefWidth="44.0" prefHeight="10.0" styleClass="settings-surface-preview settings-surface-preview-soft"/>
+                        <Region prefWidth="44.0" prefHeight="10.0" styleClass="settings-surface-preview settings-surface-preview-accent"/>
+                    </HBox>
+                    <Label text="Чистые светлые поверхности, мягкие границы и акцент на содержании."
+                           styleClass="settings-swatch-text"
+                           wrapText="true"/>
+                </VBox>
+
+                <VBox spacing="8.0" HBox.hgrow="ALWAYS" styleClass="settings-swatch-card settings-swatch-dark">
+                    <Label text="Тёмная тема" styleClass="settings-swatch-title"/>
+                    <HBox spacing="6.0">
+                        <Region prefWidth="44.0" prefHeight="10.0" styleClass="settings-surface-preview settings-surface-preview-dark"/>
+                        <Region prefWidth="44.0" prefHeight="10.0" styleClass="settings-surface-preview settings-surface-preview-dark-soft"/>
+                        <Region prefWidth="44.0" prefHeight="10.0" styleClass="settings-surface-preview settings-surface-preview-dark-accent"/>
+                    </HBox>
+                    <Label text="Контрастный рабочий режим для длинных сессий, презентаций и плотных проектов."
+                           styleClass="settings-swatch-text"
+                           wrapText="true"/>
+                </VBox>
+
+                <VBox spacing="8.0" HBox.hgrow="ALWAYS" styleClass="settings-swatch-card settings-swatch-type">
+                    <Label text="Типографика" styleClass="settings-swatch-title"/>
+                    <Label text="Ag" styleClass="settings-font-sample"/>
+                    <Label text="Выбор семейства шрифта и текстового режима меняет характер всего интерфейса."
+                           styleClass="settings-swatch-text"
+                           wrapText="true"/>
+                </VBox>
+            </HBox>
+        </VBox>
+
+        <VBox spacing="16.0" prefWidth="300.0" styleClass="settings-card settings-card-elevated settings-card-glass">
+            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                <FontIcon iconLiteral="mdi2s-shape-outline" iconSize="18"/>
+                <Label text="Стиль зависимостей" styleClass="settings-card-title"/>
+            </HBox>
+
+            <ComboBox fx:id="dependencyLineStyleBox" prefWidth="220.0"/>
+
+            <AnchorPane fx:id="dependencyLinePreviewPane"
+                        prefWidth="220.0"
+                        minWidth="220.0"
+                        maxWidth="220.0"
+                        prefHeight="104.0"
+                        minHeight="104.0"
+                        maxHeight="104.0"
+                        styleClass="settings-preview-pane"/>
+
+            <VBox spacing="4.0">
+                <Label text="Предпросмотр линии" styleClass="settings-inline-caption"/>
+                <Label text="Classic — строгий ортогональный стиль, Rounded — мягкий и презентационный, Metro — компактный и современный."
+                       styleClass="settings-help"
+                       wrapText="true"/>
+            </VBox>
+        </VBox>
+    </HBox>
+
+    <HBox spacing="18.0">
+        <VBox spacing="16.0" HBox.hgrow="ALWAYS" styleClass="settings-card settings-card-elevated">
+            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                <FontIcon iconLiteral="mdi2f-format-color-fill" iconSize="18"/>
+                <Label text="Цвета задач и приоритетов" styleClass="settings-card-title"/>
+            </HBox>
+
+            <GridPane hgap="18.0" vgap="14.0" styleClass="settings-grid">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="220.0" prefWidth="220.0"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <Label text="Основная задача:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <ColorPicker fx:id="taskColorPicker" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Критическая задача:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <ColorPicker fx:id="criticalTaskColorPicker" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Подзадача:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <ColorPicker fx:id="subTaskColorPicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="Приоритет: высокий" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <ColorPicker fx:id="priorityHighColorPicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                <Label text="Приоритет: средний" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                <ColorPicker fx:id="priorityMediumColorPicker" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                <Label text="Приоритет: низкий" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                <ColorPicker fx:id="priorityLowColorPicker" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+            </GridPane>
+        </VBox>
+
+        <VBox spacing="16.0" HBox.hgrow="ALWAYS" styleClass="settings-card settings-card-elevated">
+            <HBox alignment="CENTER_LEFT" spacing="8.0">
+                <FontIcon iconLiteral="mdi2v-vector-polyline" iconSize="18"/>
+                <Label text="Цвета линий зависимостей" styleClass="settings-card-title"/>
+            </HBox>
+
+            <GridPane hgap="18.0" vgap="14.0" styleClass="settings-grid">
+                <columnConstraints>
+                    <ColumnConstraints minWidth="130.0" prefWidth="130.0"/>
+                    <ColumnConstraints hgrow="ALWAYS"/>
+                </columnConstraints>
+
+                <Label text="FS" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <ColorPicker fx:id="dependencyFsColorPicker" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="SS" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <ColorPicker fx:id="dependencySsColorPicker" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="FF" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <ColorPicker fx:id="dependencyFfColorPicker" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <Label text="SF" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <ColorPicker fx:id="dependencySfColorPicker" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+            </GridPane>
+
+            <Label text="Разные цвета помогают быстрее читать плотные графики и мгновенно понимать тип связи между задачами."
+                   styleClass="settings-help"
+                   wrapText="true"/>
+        </VBox>
+    </HBox>
+
+    <Separator/>
+
+    <HBox styleClass="settings-actions">
+        <Button fx:id="resetGeneralColorsBtn" text="Сбросить визуальные настройки" styleClass="secondary-button"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="cancelGeneralBtn" text="Отмена" styleClass="secondary-button"/>
+        <Button fx:id="applyGeneralBtn" text="Применить" defaultButton="true"/>
+    </HBox>
+</VBox>

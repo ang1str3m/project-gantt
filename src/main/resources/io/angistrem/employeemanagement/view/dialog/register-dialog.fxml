@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="16.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="io.angistrem.employeemanagement.controller.RegisterController"
+      styleClass="dialog-root">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <children>
+        <Label text="Регистрация пользователя" styleClass="dialog-title">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <Label text="Заполните поля для создания нового аккаунта." styleClass="dialog-subtitle"/>
+        <Separator/>
+
+        <GridPane hgap="12" vgap="12" styleClass="dialog-section">
+            <columnConstraints>
+                <ColumnConstraints minWidth="150" prefWidth="170"/>
+                <ColumnConstraints hgrow="ALWAYS" minWidth="260"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints/>
+                <RowConstraints/>
+                <RowConstraints/>
+                <RowConstraints/>
+            </rowConstraints>
+            <children>
+                <Label text="Имя пользователя" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="name" promptText="Например: Андрей" GridPane.rowIndex="0" GridPane.columnIndex="1" styleClass="dialog-field"/>
+
+                <Label text="Логин" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="login" promptText="Не менее 4 символов" GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="dialog-field"/>
+
+                <Label text="Пароль" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <PasswordField fx:id="password" promptText="Не менее 8 символов: a-z, A-Z, 0-9" GridPane.rowIndex="2" GridPane.columnIndex="1" styleClass="dialog-field"/>
+
+                <Label text="Подтверждение" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                <PasswordField fx:id="confirmPassword" promptText="Повторите пароль" GridPane.rowIndex="3" GridPane.columnIndex="1" styleClass="dialog-field"/>
+            </children>
+        </GridPane>
+
+        <HBox spacing="10" styleClass="dialog-actions">
+            <children>
+                <Button text="Отменить" onAction="#handleCancel" cancelButton="true" styleClass="secondary-button"/>
+                <Button text="Зарегистрировать" onAction="#handleOk" defaultButton="true" styleClass="primary-button"/>
+            </children>
+        </HBox>
+    </children>
+</VBox>

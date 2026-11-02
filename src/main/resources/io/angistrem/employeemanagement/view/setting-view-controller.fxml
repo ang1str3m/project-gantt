@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<HBox spacing="18.0"
+      prefHeight="768.0"
+      prefWidth="1240.0"
+      styleClass="settings-shell"
+      xmlns="http://javafx.com/javafx/21"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="io.angistrem.employeemanagement.controller.SettingController">
+
+    <fx:define>
+        <ToggleGroup fx:id="settingsToggleGroup"/>
+    </fx:define>
+
+    <VBox prefWidth="308.0"
+          minWidth="308.0"
+          maxWidth="308.0"
+          spacing="16.0"
+          styleClass="settings-sidebar">
+
+        <VBox spacing="12.0" styleClass="settings-brand-card">
+            <HBox spacing="12.0" alignment="CENTER_LEFT">
+                <StackPane prefWidth="46.0" prefHeight="46.0" styleClass="settings-brand-glyph">
+                    <FontIcon iconLiteral="mdi2c-cog-outline" iconSize="22" iconColor="white"/>
+                </StackPane>
+                <VBox spacing="2.0">
+                    <Label text="Настройки" styleClass="settings-sidebar-title"/>
+                    <Label text="Gantrem workspace" styleClass="settings-side-note-title"/>
+                </VBox>
+            </HBox>
+            <Label text="Оформление, хранение файлов, экспорт, горячие клавиши и системные параметры в одном рабочем центре."
+                   styleClass="settings-sidebar-subtitle"
+                   wrapText="true"/>
+        </VBox>
+
+        <Button onAction="#handleBack" text="Назад" styleClass="secondary-button settings-back-button">
+            <graphic>
+                <FontIcon iconLiteral="mdi2a-arrow-left" iconSize="18"/>
+            </graphic>
+        </Button>
+
+        <VBox spacing="10.0" styleClass="settings-nav-cluster">
+            <Label text="Разделы" styleClass="settings-rail-caption"/>
+
+            <ToggleButton fx:id="general"
+                          toggleGroup="$settingsToggleGroup"
+                          selected="true"
+                          prefWidth="Infinity"
+                          text="Общие"
+                          styleClass="settings-nav-button"
+                          onAction="#handleGeneral">
+                <graphic>
+                    <FontIcon iconLiteral="mdi2p-palette-swatch-outline" iconSize="18"/>
+                </graphic>
+            </ToggleButton>
+
+            <ToggleButton fx:id="save"
+                          toggleGroup="$settingsToggleGroup"
+                          prefWidth="Infinity"
+                          text="Сохранение и экспорт"
+                          styleClass="settings-nav-button"
+                          onAction="#handleSaveAndLoad">
+                <graphic>
+                    <FontIcon iconLiteral="mdi2f-folder-download-outline" iconSize="18"/>
+                </graphic>
+            </ToggleButton>
+
+            <ToggleButton fx:id="shortcuts"
+                          toggleGroup="$settingsToggleGroup"
+                          prefWidth="Infinity"
+                          text="Горячие клавиши"
+                          styleClass="settings-nav-button"
+                          onAction="#handleShortcuts">
+                <graphic>
+                    <FontIcon iconLiteral="mdi2k-keyboard-outline" iconSize="18"/>
+                </graphic>
+            </ToggleButton>
+
+            <ToggleButton fx:id="connectionToDB"
+                          toggleGroup="$settingsToggleGroup"
+                          prefWidth="Infinity"
+                          text="Хранилище данных"
+                          styleClass="settings-nav-button"
+                          onAction="#handleConnectionToDB">
+                <graphic>
+                    <FontIcon iconLiteral="mdi2d-database-outline" iconSize="18"/>
+                </graphic>
+            </ToggleButton>
+
+            <ToggleButton fx:id="infoApp"
+                          toggleGroup="$settingsToggleGroup"
+                          prefWidth="Infinity"
+                          text="О приложении"
+                          styleClass="settings-nav-button"
+                          onAction="#handleInfo">
+                <graphic>
+                    <FontIcon iconLiteral="mdi2i-information-outline" iconSize="18"/>
+                </graphic>
+            </ToggleButton>
+        </VBox>
+
+        <Region VBox.vgrow="ALWAYS"/>
+
+        <VBox spacing="8.0" styleClass="settings-side-note">
+            <Label text="Совет" styleClass="settings-side-note-title"/>
+            <Label text="Сначала настройте тему, шрифт и стиль линий, а затем сохраните рабочие пути. Так интерфейс и экспорт сразу будут выглядеть как нужно."
+                   styleClass="settings-side-note-text"
+                   wrapText="true"/>
+        </VBox>
+    </VBox>
+
+    <VBox HBox.hgrow="ALWAYS" spacing="12.0">
+        <HBox alignment="CENTER_LEFT" styleClass="settings-topbar">
+            <VBox spacing="3.0">
+                <Label text="Центр настроек Gantrem" styleClass="settings-topbar-title"/>
+                <Label text="Точная настройка внешнего вида, экспорта и поведения приложения."
+                       styleClass="settings-topbar-subtitle"/>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <HBox spacing="10.0" alignment="CENTER_RIGHT">
+                <Label text="Premium UI" styleClass="settings-topbar-pill"/>
+                <Label text="Release polish" styleClass="settings-topbar-pill settings-topbar-pill-muted"/>
+            </HBox>
+        </HBox>
+
+        <StackPane HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" styleClass="settings-stage">
+            <AnchorPane fx:id="contentArea" styleClass="settings-content-root"/>
+        </StackPane>
+    </VBox>
+</HBox>
